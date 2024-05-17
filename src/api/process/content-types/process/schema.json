@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "processes",
+  "info": {
+    "singularName": "process",
+    "pluralName": "processes",
+    "displayName": "Process",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "processName": {
+      "type": "string"
+    },
+    "processUser": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::end-user.end-user",
+      "inversedBy": "processes"
+    },
+    "processRole": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::process-role.process-role",
+      "inversedBy": "processes"
+    },
+    "processStep": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::process-step.process-step",
+      "inversedBy": "processes"
+    }
+  }
+}

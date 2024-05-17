@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "end_users",
+  "info": {
+    "singularName": "end-user",
+    "pluralName": "end-users",
+    "displayName": "EndUser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "role": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "processes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::process.process",
+      "mappedBy": "processUser"
+    },
+    "process_steps": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::process-step.process-step",
+      "mappedBy": "stepUser"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": false
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "mystery",
+        "fantasy",
+        "thriller",
+        "classic"
+      ],
+      "default": "mystery",
+      "required": true
+    },
+    "pages": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "availability": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "english",
+        "hindi",
+        "marathi"
+      ],
+      "required": true
+    }
+  }
+}

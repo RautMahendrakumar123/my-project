@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "process_steps",
+  "info": {
+    "singularName": "process-step",
+    "pluralName": "process-steps",
+    "displayName": "Process-step",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stepName": {
+      "type": "string"
+    },
+    "stepOrder": {
+      "type": "integer"
+    },
+    "stepUser": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::end-user.end-user",
+      "inversedBy": "process_steps"
+    },
+    "processes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::process.process",
+      "mappedBy": "processStep"
+    }
+  }
+}
